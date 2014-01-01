@@ -11,6 +11,10 @@
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
 ;; http://zeekat.nl/articles/making-emacs-work-for-me.html
+ (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  ;; Replace "sbcl" with the path to your implementation
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+
 (defun my/->string (str)
   (cond
    ((stringp str) str)

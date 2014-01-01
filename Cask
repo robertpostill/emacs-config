@@ -12,6 +12,9 @@
 (depends-on "smex")
 (depends-on "wrap-region")
 (depends-on "yasnippet")
+;; LISP Dev
+(depends-on "slime")
+
 ;; Clojure
 (depends-on "paredit")
 (depends-on "highlight-parentheses")

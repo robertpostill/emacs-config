@@ -8,6 +8,9 @@
 (ido-mode +1)
 ; (ido-yes-or-no-mode +1)
 
+;; winner mode for working with windows
+(winner-mode 1)
+
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
 ;; http://zeekat.nl/articles/making-emacs-work-for-me.html

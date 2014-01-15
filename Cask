@@ -12,6 +12,8 @@
 (depends-on "smex")
 (depends-on "wrap-region")
 (depends-on "yasnippet")
+(depends-on "graphviz-dot-mode")
+
 ;; LISP Dev
 (depends-on "slime")
 

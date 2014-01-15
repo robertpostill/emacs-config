@@ -51,6 +51,8 @@
   (add-hook mode
             'my/general-lisp-hooks))
 
+; I can't think of a time I don't want matching parentheses highlighted.
+(show-paren-mode 1)
 ;; Ruby 
 (dolist (exp '("Rakefile\\'" "\\.rake\\'"))
   (add-to-list 'auto-mode-alist

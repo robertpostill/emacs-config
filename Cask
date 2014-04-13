@@ -36,5 +36,6 @@
 (depends-on "ruby-compilation")
 (depends-on "rspec-mode")
 (depends-on "rinari")
+(depends-on "coffee-mode")
 ;; The one and only theme
 (depends-on "solarized-theme")

@@ -52,10 +52,13 @@
             'my/general-lisp-hooks))
 
 ;; Ruby 
-(dolist (exp '("Rakefile\\'" "\\.rake\\'"))
+(dolist (exp '("Gemfile" "Rakefile\\'" "\\.rake\\'"))
   (add-to-list 'auto-mode-alist
                (cons exp 'ruby-mode)))
+(require 'rinari)
+(setq rinari-tags-file-name "TAGS")
 
 (load-theme 'solarized-dark t)
+
 
 (server-start)

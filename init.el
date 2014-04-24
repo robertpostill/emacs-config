@@ -11,6 +11,9 @@
 ;; winner mode for working with windows
 (winner-mode 1)
 
+;; desktops, so I can have a stack of buffers open at any one time
+(desktop-save-mode 1)
+
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
 ;; http://zeekat.nl/articles/making-emacs-work-for-me.html
@@ -50,6 +53,10 @@
 (dolist (mode (mapcar 'my/->mode-hook my/lisps))
   (add-hook mode
             'my/general-lisp-hooks))
+
+(dolist (exp '("Cask"))
+  (add-to-list 'auto-mode-alist
+               (cons exp 'emacs-lisp-mode)))
 
 ;; Ruby 
 (dolist (exp '("Gemfile" "Rakefile\\'" "\\.rake\\'"))

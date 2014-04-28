@@ -6,6 +6,10 @@
 ;; ido mode - what would I do without it?
 (setq ido-enable-flex-matching t)
 (ido-mode +1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
 ; (ido-yes-or-no-mode +1)
 
 ;; winner mode for working with windows
@@ -62,8 +66,12 @@
 (dolist (exp '("Gemfile" "Rakefile\\'" "\\.rake\\'"))
   (add-to-list 'auto-mode-alist
                (cons exp 'ruby-mode)))
-(require 'rinari)
-(setq rinari-tags-file-name "TAGS")
+
+;; projectile and rails
+(projectile-global-mode)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+(setq projectile-rails-expand-snippet nil)
+
 
 (load-theme 'solarized-dark t)
 

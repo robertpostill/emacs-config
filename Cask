@@ -26,8 +26,8 @@
 (depends-on "clojure-mode")
 (depends-on "clojure-test-mode")
 (depends-on "cider")
-(depends-on "cider-decompile")
-(depends-on "cider-tracing")
+;(depends-on "cider-decompile")
+;(depends-on "cider-tracing")
 
 ;; Ruby stuff
 (depends-on "yaml-mode")
@@ -38,8 +38,8 @@
 (depends-on "haml-mode")
 (depends-on "ruby-compilation")
 (depends-on "rspec-mode")
-(depends-on "rinari")
 (depends-on "coffee-mode")
+(depends-on "projectile-rails")
 
 ;; The one and only theme
 (depends-on "solarized-theme")

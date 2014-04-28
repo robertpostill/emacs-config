@@ -72,6 +72,10 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (setq projectile-rails-expand-snippet nil)
 
+;; yasnippets
+(yas-global-mode 1)
+(add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")
+
 
 (load-theme 'solarized-dark t)
 

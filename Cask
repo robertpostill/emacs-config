@@ -26,8 +26,8 @@
 (depends-on "clojure-mode")
 (depends-on "clojure-test-mode")
 (depends-on "cider")
-;(depends-on "cider-decompile")
-;(depends-on "cider-tracing")
+(depends-on "cider-decompile")
+(depends-on "cider-tracing")
 
 ;; Ruby stuff
 (depends-on "yaml-mode")

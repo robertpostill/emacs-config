@@ -13,6 +13,8 @@
 (depends-on "wrap-region")
 (depends-on "yasnippet")
 (depends-on "graphviz-dot-mode")
+(depends-on "bookmark+")
+(depends-on "flx-ido")
 
 ;; LISP Dev
 (depends-on "slime")
@@ -26,13 +28,18 @@
 (depends-on "cider")
 (depends-on "cider-decompile")
 (depends-on "cider-tracing")
+
 ;; Ruby stuff
 (depends-on "yaml-mode")
 (depends-on "json-mode")
 (depends-on "feature-mode")
+(depends-on "rspec-mode")
 (depends-on "scss-mode")
+(depends-on "haml-mode")
 (depends-on "ruby-compilation")
 (depends-on "rspec-mode")
-(depends-on "rinari")
+(depends-on "coffee-mode")
+(depends-on "projectile-rails")
+
 ;; The one and only theme
 (depends-on "solarized-theme")

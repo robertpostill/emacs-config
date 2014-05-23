@@ -6,10 +6,17 @@
 ;; ido mode - what would I do without it?
 (setq ido-enable-flex-matching t)
 (ido-mode +1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
 ; (ido-yes-or-no-mode +1)
 
 ;; winner mode for working with windows
 (winner-mode 1)
+
+;; desktops, so I can have a stack of buffers open at any one time
+(desktop-save-mode 1)
 
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
@@ -51,13 +58,26 @@
   (add-hook mode
             'my/general-lisp-hooks))
 
-; I can't think of a time I don't want matching parentheses highlighted.
-(show-paren-mode 1)
+(dolist (exp '("Cask"))
+  (add-to-list 'auto-mode-alist
+               (cons exp 'emacs-lisp-mode)))
+
 ;; Ruby 
-(dolist (exp '("Rakefile\\'" "\\.rake\\'"))
+(dolist (exp '("Gemfile" "Rakefile\\'" "\\.rake\\'"))
   (add-to-list 'auto-mode-alist
                (cons exp 'ruby-mode)))
 
+;; projectile and rails
+(projectile-global-mode)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+(setq projectile-rails-expand-snippet nil)
+
+;; yasnippets
+(yas-global-mode 1)
+(add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")
+
+
 (load-theme 'solarized-dark t)
+
 
 (server-start)

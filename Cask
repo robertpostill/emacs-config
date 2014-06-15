@@ -41,5 +41,11 @@
 (depends-on "coffee-mode")
 (depends-on "projectile-rails")
 
+(depends-on "auto-complete")
+
+;; DevOps
+(depends-on "ansible")
+
+
 ;; The one and only theme
 (depends-on "solarized-theme")

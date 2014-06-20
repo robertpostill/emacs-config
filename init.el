@@ -18,6 +18,9 @@
 ;; desktops, so I can have a stack of buffers open at any one time
 (desktop-save-mode 1)
 
+;; ace-window, window movement made nice
+(global-set-key (kbd "M-p") 'ace-window)
+
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
 ;; http://zeekat.nl/articles/making-emacs-work-for-me.html

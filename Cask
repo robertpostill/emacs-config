@@ -15,6 +15,7 @@
 (depends-on "graphviz-dot-mode")
 (depends-on "bookmark+")
 (depends-on "flx-ido")
+(depends-on "ace-window")
 
 ;; LISP Dev
 (depends-on "slime")

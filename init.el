@@ -12,6 +12,10 @@
 (setq ido-use-faces nil)
 ; (ido-yes-or-no-mode +1)
 
+;; Autocomplete
+(require 'auto-complete-config)
+(ac-config-default)
+
 ;; winner mode for working with windows
 (winner-mode 1)
 

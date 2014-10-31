@@ -1,4 +1,6 @@
+(source gnu)
 (source melpa)
+(source marmalade)
 
 (depends-on "cask")
 (depends-on "dash")
@@ -16,6 +18,8 @@
 (depends-on "bookmark+")
 (depends-on "flx-ido")
 (depends-on "ace-window")
+(depends-on "ack-and-a-half")
+(depends-on "exec-path-from-shell")
 
 ;; LISP Dev
 (depends-on "slime")
@@ -25,10 +29,8 @@
 (depends-on "highlight-parentheses")
 (depends-on "rainbow-delimiters")
 (depends-on "clojure-mode")
-(depends-on "clojure-test-mode")
 (depends-on "cider")
 (depends-on "cider-decompile")
-(depends-on "cider-tracing")
 
 ;; Ruby stuff
 (depends-on "yaml-mode")
@@ -47,6 +49,16 @@
 ;; DevOps
 (depends-on "ansible")
 
+;; OCaml
+(depends-on "tuareg")
+(depends-on "merlin")
+(depends-on "utop")
+
+;;  R
+(depends-on "ess")
+(depends-on "ess-R-data-view")
+(depends-on "ess-R-object-popup")
+(depends-on "ess-smart-underscore")
 
 ;; The one and only theme
 (depends-on "solarized-theme")

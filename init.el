@@ -12,6 +12,9 @@
 (setq ido-use-faces nil)
 ; (ido-yes-or-no-mode +1)
 
+;; Highlight parentheses.
+(show-paren-mode 1)
+
 ;; Autocomplete
 (require 'auto-complete-config)
 (ac-config-default)
@@ -24,6 +27,10 @@
 
 ;; ace-window, window movement made nice
 (global-set-key (kbd "M-p") 'ace-window)
+
+;; get the path from the shell on OS X
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
@@ -83,8 +90,31 @@
 (yas-global-mode 1)
 (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")
 
+;;OCaml
+(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+(setq auto-mode-alist
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist)) 
+(autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
+(add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
+(add-hook 'tuareg-mode-hook 'merlin-mode)
+(setq merlin-use-auto-complete-mode t)
+(setq merlin-error-after-save nil)
 
 (load-theme 'solarized-dark t)
 
 
 (server-start)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(utop-command "opam config exec \"utop -emacs\""))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

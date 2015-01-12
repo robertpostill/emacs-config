@@ -21,6 +21,7 @@
 (depends-on "ace-window")
 (depends-on "ack-and-a-half")
 (depends-on "exec-path-from-shell")
+(depends-on "paradox")
 
 ;; LISP Dev
 (depends-on "slime")

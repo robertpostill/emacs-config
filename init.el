@@ -93,6 +93,11 @@
 (yas-global-mode 1)
 (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")
 
+;;; get yasnippets support in rspec-mode
+(eval-after-load 'rspec-mode
+ '(rspec-install-snippets))
+
+
 ;;OCaml
 (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
 (setq auto-mode-alist

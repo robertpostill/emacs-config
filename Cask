@@ -33,6 +33,8 @@
 (depends-on "clojure-mode")
 (depends-on "cider")
 (depends-on "cider-decompile")
+;;; little bit of 4clojure extras
+(depends-on "4clojure")
 
 ;; Ruby stuff
 (depends-on "yaml-mode")

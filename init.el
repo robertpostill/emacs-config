@@ -105,7 +105,37 @@
 (setq merlin-use-auto-complete-mode t)
 (setq merlin-error-after-save nil)
 
+;; Add opam emacs directory to the load-path
+(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+;;(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+;; Load merlin-mode
+(require 'merlin)
+;; Start merlin on ocaml files
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode t)
+;; Enable auto-complete
+(setq merlin-use-auto-complete-mode 'easy)
+;; Use opam switch to lookup ocamlmerlin binary
+(setq merlin-command 'opam)
+
+;; So you can do it on a mac, where `C-<up>` and `C-<down>` are used
+;; by spaces.
+(define-key merlin-mode-map
+  (kbd "C-c <up>") 'merlin-type-enclosing-go-up)
+(define-key merlin-mode-map
+  (kbd "C-c <down>") 'merlin-type-enclosing-go-down)
+; (set-face-background 'merlin-type-face "#88FF44")
+
+;; ocp-indent 
+(setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
+;(load-file (concat opam-share "/typerex/ocp-indent/ocp-indent.el"))
+
+;; Look and feel
+;;; Theme
 (load-theme 'solarized-dark t)
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 
 (server-start)

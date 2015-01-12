@@ -2,6 +2,7 @@
 (source melpa)
 (source marmalade)
 
+;; Environment enhancers
 (depends-on "cask")
 (depends-on "dash")
 (depends-on "drag-stuff")

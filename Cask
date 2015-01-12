@@ -44,10 +44,11 @@
 (depends-on "scss-mode")
 (depends-on "haml-mode")
 (depends-on "ruby-compilation")
-(depends-on "rspec-mode")
 (depends-on "coffee-mode")
 (depends-on "projectile-rails")
-
+(depends-on "ruby-tools")
+(depends-on "ruby-end")
+(depends-on "ruby-refactor")
 (depends-on "auto-complete")
 
 ;; DevOps

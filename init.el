@@ -173,5 +173,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Magit
 ;; Calm down magit, I have read your instructions :) 
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+(global-set-key (kbd "C-x g") 'magit-status)

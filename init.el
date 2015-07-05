@@ -178,3 +178,29 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; For jekyll
+(setq org-publish-project-alist
+    '(("com-grinning-cat-posts"
+       ;; Path to your org files.
+       :base-directory "~/software/robertpostill.github.io/org"
+       :base-extension "org"
+
+       ;; Path to your Jekyll project.
+       :publishing-directory "~/software/robertpostill.github.io"
+       :recursive t
+       :publishing-function org-html-publish-to-html
+       :headline-levels 4 
+       :html-extension "html"
+       :body-only t ;; Only export section between <body> </body>
+       :table-of-contents nil)
+
+      ("com-grinning-cat-static"
+       :base-directory "~/software/robertpostill.github.io/org" 
+       :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+       :publishing-directory "~/software/robertpostill.github.io"
+       :recursive t
+       :publishing-function org-publish-attachment
+       :table-of-contents nil)
+
+      ("grinning-cat" :components ("com-grinning-cat-posts" "com-grinning-cat-static"))))

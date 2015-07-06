@@ -59,6 +59,7 @@
 (depends-on "markdown-mode")
 (depends-on "merlin")
 (depends-on "multiple-cursors")
+(depends-on "org2jekyll")
 (depends-on "ox-gfm")
 (depends-on "package-build")
 (depends-on "pallet")

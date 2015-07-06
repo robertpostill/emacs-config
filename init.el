@@ -187,7 +187,7 @@
        :base-extension "org"
 
        ;; Path to your Jekyll project.
-       :publishing-directory "~/software/robertpostill.github.io"
+       :publishing-directory "~/software/robertpostill.github.io/_posts"
        :recursive t
        :publishing-function org-html-publish-to-html
        :headline-levels 4 

@@ -10,7 +10,8 @@
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
 (setq ido-use-faces nil)
-; (ido-yes-or-no-mode +1)
+(ido-yes-or-no-mode 1)
+(ido-ubiquitous-mode 1)
 
 ;; Highlight parentheses.
 (show-paren-mode 1)
@@ -38,9 +39,11 @@
 ;; LISP hacking
 ;; Setup shamelessly ripped from 
 ;; http://zeekat.nl/articles/making-emacs-work-for-me.html
- (load (expand-file-name "~/quicklisp/slime-helper.el"))
-  ;; Replace "sbcl" with the path to your implementation
-  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; Replace "sbcl" with the path to your implementation
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+;; Gimme most of slime's extras
+(setq slime-contribs '(slime-fancy)) 
 
 (defun my/->string (str)
   (cond

@@ -26,9 +26,6 @@
 ;; desktops, so I can have a stack of buffers open at any one time
 (desktop-save-mode 1)
 
-;; Paradox github access
-(setq paradox-github-token "d51edf216d388880997772ff917fcb225ce8cc8c")
-
 ;; ace-window, window movement made nice
 (global-set-key (kbd "M-p") 'ace-window)
 

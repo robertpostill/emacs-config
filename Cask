@@ -58,6 +58,7 @@
 (depends-on "magit-popup")
 (depends-on "markdown-mode")
 (depends-on "merlin")
+(depends-on "midje-mode")
 (depends-on "multiple-cursors")
 (depends-on "org2jekyll")
 (depends-on "ox-gfm")

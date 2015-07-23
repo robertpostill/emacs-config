@@ -14,6 +14,10 @@
 (ido-yes-or-no-mode 1)
 (ido-ubiquitous-mode 1)
 
+;; yasnippets
+(yas-global-mode 1)
+(add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")
+
 ;; Highlight parentheses.
 (show-paren-mode 1)
 
@@ -80,6 +84,11 @@
   (add-to-list 'auto-mode-alist
                (cons exp 'emacs-lisp-mode)))
 
+;; Javascript
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(setq js2-highlight-level 3)
+
 ;; Ruby 
 (dolist (exp '("Gemfile" "Rakefile\\'" "\\.rake\\'"))
   (add-to-list 'auto-mode-alist
@@ -89,10 +98,7 @@
 (projectile-global-mode)
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (setq projectile-rails-expand-snippet nil)
-
-;; yasnippets
-(yas-global-mode 1)
-(add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")
+(rvm-use-default)
 
 ;;; get yasnippets support in rspec-mode
 (eval-after-load 'rspec-mode
@@ -156,8 +162,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-
 (server-start)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -49,7 +49,6 @@
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "javap-mode")
-(depends-on "js3-mode")
 (depends-on "json-mode")
 (depends-on "json-reformat")
 (depends-on "json-snatcher")
@@ -96,4 +95,5 @@
 (depends-on "with-editor")
 (depends-on "wrap-region")
 (depends-on "yaml-mode")
+(depends-on "yard-mode")
 (depends-on "yasnippet")

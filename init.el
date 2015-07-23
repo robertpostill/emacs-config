@@ -2,6 +2,7 @@
 
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
+(pallet-mode t)
 
 ;; ido mode - what would I do without it?
 (setq ido-enable-flex-matching t)

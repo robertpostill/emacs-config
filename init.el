@@ -207,3 +207,8 @@
        :table-of-contents nil)
 
       ("grinning-cat" :components ("com-grinning-cat-posts" "com-grinning-cat-static"))))
+
+;; Customised keybindings
+;; Mac OS style font control
+(global-set-key (kbd "s-+") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)

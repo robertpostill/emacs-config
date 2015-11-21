@@ -102,7 +102,10 @@
 
 ;;; get yasnippets support in rspec-mode
 (eval-after-load 'rspec-mode
- '(rspec-install-snippets))
+  '(rspec-install-snippets))
+
+(add-hook 'ruby-mode-hook
+	  (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 
 ;;OCaml

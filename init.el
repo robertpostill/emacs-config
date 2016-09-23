@@ -21,6 +21,10 @@
 (ido-yes-or-no-mode 1)
 (ido-ubiquitous-mode 1)
 
+;; Midnight mode for clearing old buffers
+(require 'midnight)
+(midnight-delay-set 'midnight-delay 0)
+
 ;; yasnippets
 (yas-global-mode 1)
 (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets")

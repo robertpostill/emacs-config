@@ -142,7 +142,7 @@
 
 (add-hook 'ruby-mode-hook
 	  (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-
+(add-hook 'ruby-mode-hook 'rubocop-mode)
 
 ;;OCaml
 

@@ -329,3 +329,5 @@
 ;; Mac OS style font control
 (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
+
+(put 'upcase-region 'disabled nil)

@@ -194,6 +194,12 @@
 (setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
 ;(load-file (concat opam-share "/typerex/ocp-indent/ocp-indent.el"))
 
+;; get some help with keybindings
+(which-key-mode)
+
+;; make ssh-agent a thing
+(keychain-refresh-environment)
+
 ;; Look and feel
 ;;; Theme
 (load-theme 'solarized-dark t)
@@ -329,9 +335,6 @@
 ;; Mac OS style font control
 (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
-
-;; make ssh-agent a thing
-(keychain-refresh-environment)
 
 (put 'upcase-region 'disabled nil)
 

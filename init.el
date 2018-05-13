@@ -207,8 +207,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(server-start)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -337,4 +335,3 @@
 (global-set-key (kbd "s--") 'text-scale-decrease)
 
 (put 'upcase-region 'disabled nil)
-

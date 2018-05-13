@@ -7,7 +7,7 @@
 
 (setq inhibit-startup-screen +1)
 
-(require 'cask)
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 (pallet-mode t)
 

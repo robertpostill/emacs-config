@@ -36,6 +36,8 @@
 (depends-on "dash-at-point")
 (depends-on "dash-functional")
 (depends-on "deferred")
+(depends-on "docker")
+(depends-on "dockerfile-mode")
 (depends-on "drag-stuff")
 (depends-on "ecb")
 (depends-on "edn")

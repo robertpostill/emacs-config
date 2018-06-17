@@ -40,7 +40,7 @@
 (desktop-save-mode 1)
 
 ;; ace-window, window movement made nice
-(global-set-key (kbd "M-p") 'ace-window)
+(global-set-key (kbd "M-o") 'ace-window)
 
 ;; get the path from the shell on OS X
 (when (memq window-system '(mac ns))

@@ -101,6 +101,7 @@
 (depends-on "memoize")
 (depends-on "merlin")
 (depends-on "midje-mode")
+(depends-on "mqtt-mode")
 (depends-on "multiple-cursors")
 (depends-on "org2jekyll")
 (depends-on "ox-gfm")

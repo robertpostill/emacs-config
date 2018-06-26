@@ -91,6 +91,7 @@
 (depends-on "julia-mode")
 (depends-on "keychain-environment")
 (depends-on "let-alist")
+(depends-on "lispy")
 (depends-on "magit")
 (depends-on "magit-gh-pulls")
 (depends-on "magit-popup")

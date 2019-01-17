@@ -1,3 +1,6 @@
+;;; Commentary:
+;; Robert Postill's Emacs config
+;;
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -86,7 +89,8 @@
 
 (dolist (mode (mapcar 'my/->mode-hook my/lisps))
   (add-hook mode
-            'my/general-lisp-hooks))
+            'my/general-lisp-hooks)
+  (setq indent-tab-mode nil))
 
 (dolist (exp '("\\.lsp"))
   (add-to-list 'auto-mode-alist
@@ -256,7 +260,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-yes-or-no ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask flx-ido feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
+    (nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-yes-or-no ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask flx-ido feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))

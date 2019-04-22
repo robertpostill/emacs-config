@@ -129,6 +129,7 @@
 (depends-on "prettier-js")
 (depends-on "projectile")
 (depends-on "projectile-rails")
+(depends-on "pug-mode")
 (depends-on "queue")
 (depends-on "racket-mode")
 (depends-on "rainbow-delimiters")

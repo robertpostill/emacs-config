@@ -130,6 +130,7 @@
 (depends-on "projectile")
 (depends-on "projectile-rails")
 (depends-on "pug-mode")
+(depends-on "pytest")
 (depends-on "queue")
 (depends-on "racket-mode")
 (depends-on "rainbow-delimiters")

@@ -368,64 +368,15 @@
 (require 'org)
 (require 'org2jekyll)
 
-(custom-set-variables '(org2jekyll-blog-author "robertpostill")
-                      '(org2jekyll-source-directory (expand-file-name "~/software/robertpostill.github.io/org/"))
-                      '(org2jekyll-jekyll-directory (expand-file-name "~/software/robertpostill.github.io/_posts/"))
-                      '(org2jekyll-jekyll-drafts-dir "")
-                      '(org2jekyll-jekyll-posts-dir "_posts/")
-                      '(org-publish-project-alist
-                        `(("default"
-                           :base-directory ,(org2jekyll-input-directory)
-                           :base-extension "org"
-                           :publishing-directory ,(org2jekyll-output-directory)
-                           :publishing-function org-html-publish-to-html
-                           :headline-levels 4
-                           :section-numbers nil
-                           :with-toc nil
-                           :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
-                           :html-preamble t
-                           :recursive t
-                           :make-index t
-                           :html-extension "html"
-                           :body-only t)
-                          ("post"
-                           :base-directory ,(org2jekyll-input-directory)
-                           :base-extension "org"
-                           :publishing-directory ,(org2jekyll-output-directory org2jekyll-jekyll-posts-dir)
-                           :publishing-function org-html-publish-to-html
-                           :headline-levels 4
-                           :section-numbers nil
-                           :with-toc nil
-                           :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
-                           :html-preamble t
-                           :recursive t
-                           :make-index t
-                           :html-extension "html"
-                           :body-only t)
-                          ("images"
-                           :base-directory ,(org2jekyll-input-directory "img")
-                           :base-extension "jpg\\|gif\\|png"
-                           :publishing-directory ,(org2jekyll-output-directory "img")
-                           :publishing-function org-publish-attachment
-                           :recursive t)
-                          ("js"
-                           :base-directory ,(org2jekyll-input-directory "js")
-                           :base-extension "js"
-                           :publishing-directory ,(org2jekyll-output-directory "js")
-                           :publishing-function org-publish-attachment
-                           :recursive t)
-                          ("css"
-                           :base-directory ,(org2jekyll-input-directory "css")
-                           :base-extension "css\\|el"
-                           :publishing-directory ,(org2jekyll-output-directory "css")
-                           :publishing-function org-publish-attachment
-                           :recursive t)
-                          ("web" :components ("images" "js" "css")))))
+
 ;; Customised keybindings
 ;; Mac OS style font control
 (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (set-face-attribute 'default nil :font "Menlo-14" )
+
+;; Set projectile to something that isn't the mac OS print command
+(define-key projectile-mode-map (kbd "s-.") 'projectile-command-map)
 
 (put 'upcase-region 'disabled nil)
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line

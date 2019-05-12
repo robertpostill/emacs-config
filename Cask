@@ -48,6 +48,7 @@
 (depends-on "edn")
 (depends-on "elm-mode")
 (depends-on "elm-yasnippets")
+(depends-on "elpy")
 (depends-on "emacsql")
 (depends-on "emacsql-psql")
 (depends-on "ensime")

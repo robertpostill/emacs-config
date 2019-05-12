@@ -81,6 +81,7 @@
 (depends-on "hydra")
 (depends-on "ido-ubiquitous")
 (depends-on "iedit")
+(depends-on "indium")
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "ivy")

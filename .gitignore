@@ -11,3 +11,7 @@ tramp
 elpa
 eshell
 recentf
+transient
+smex-items
+yasnippet-snippets
+opam-user-setup.el

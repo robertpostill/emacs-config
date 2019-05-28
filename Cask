@@ -89,6 +89,7 @@
 (depends-on "ivy-hydra")
 (depends-on "ivy-yasnippet")
 (depends-on "javap-mode")
+(depends-on "js-doc")
 (depends-on "js2-highlight-vars")
 (depends-on "js2-mode")
 (depends-on "js2-refactor")

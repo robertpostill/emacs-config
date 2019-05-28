@@ -136,6 +136,19 @@
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (add-to-list 'auto-mode-alist '("src\\/.*\\.js\\'" . rjsx-mode))
 
+(add-hook 'rjsx-mode-hook 'prettier-js-mode)
+
+;;;  JSdoc, optimaised for work
+(setq js-doc-mail-address "robertp@ynomia.io"
+      js-doc-author (format "Robert Postill <%s>" js-doc-mail-address)
+      js-doc-url "ynomia.io"
+      js-doc-license "Proprietary")
+
+(add-hook 'js2-mode-hook
+           #'(lambda ()
+               (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
+               (define-key js2-mode-map "@" 'js-doc-insert-tag)))
+
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -270,6 +283,12 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; For jekyll
+(require 'org)
+(require 'org2jekyll)
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -316,9 +335,54 @@
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(org-publish-project-alist
+   (\`
+    (("default" :base-directory
+      (\,
+       (org2jekyll-input-directory))
+      :base-extension "org" :publishing-directory
+      (\,
+       (org2jekyll-output-directory))
+      :publishing-function org-html-publish-to-html :headline-levels 4 :section-numbers nil :with-toc nil :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>" :html-preamble t :recursive t :make-index t :html-extension "html" :body-only t)
+     ("post" :base-directory
+      (\,
+       (org2jekyll-input-directory))
+      :base-extension "org" :publishing-directory
+      (\,
+       (org2jekyll-output-directory org2jekyll-jekyll-posts-dir))
+      :publishing-function org-html-publish-to-html :headline-levels 4 :section-numbers nil :with-toc nil :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>" :html-preamble t :recursive t :make-index t :html-extension "html" :body-only t)
+     ("images" :base-directory
+      (\,
+       (org2jekyll-input-directory "img"))
+      :base-extension "jpg\\|gif\\|png" :publishing-directory
+      (\,
+       (org2jekyll-output-directory "img"))
+      :publishing-function org-publish-attachment :recursive t)
+     ("js" :base-directory
+      (\,
+       (org2jekyll-input-directory "js"))
+      :base-extension "js" :publishing-directory
+      (\,
+       (org2jekyll-output-directory "js"))
+      :publishing-function org-publish-attachment :recursive t)
+     ("css" :base-directory
+      (\,
+       (org2jekyll-input-directory "css"))
+      :base-extension "css\\|el" :publishing-directory
+      (\,
+       (org2jekyll-output-directory "css"))
+      :publishing-function org-publish-attachment :recursive t)
+     ("web" :components
+      ("images" "js" "css")))))
+ '(org2jekyll-blog-author "robertpostill" nil (org2jekyll))
+ '(org2jekyll-jekyll-directory (expand-file-name "~/software/robertpostill.github.io/") nil (org2jekyll))
+ '(org2jekyll-jekyll-drafts-dir "" nil (org2jekyll))
+ '(org2jekyll-jekyll-posts-dir "_posts/" nil (org2jekyll))
+ '(org2jekyll-source-directory
+   (expand-file-name "~/software/robertpostill.github.io/org/") nil (org2jekyll))
  '(package-selected-packages
    (quote
-    (py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
+    (js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(show-paren-mode t)
@@ -331,22 +395,22 @@
  '(vc-annotate-color-map
    (quote
     ((20 . "#dc322f")
-     (40 . "#c85d17")
-     (60 . "#be730b")
+     (40 . "#c9485ddd1797")
+     (60 . "#bf7e73b30bcb")
      (80 . "#b58900")
-     (100 . "#a58e00")
-     (120 . "#9d9100")
-     (140 . "#959300")
-     (160 . "#8d9600")
+     (100 . "#a5a58ee30000")
+     (120 . "#9d9d91910000")
+     (140 . "#9595943e0000")
+     (160 . "#8d8d96eb0000")
      (180 . "#859900")
-     (200 . "#669b32")
-     (220 . "#579d4c")
-     (240 . "#489e65")
-     (260 . "#399f7e")
+     (200 . "#67119c4632dd")
+     (220 . "#57d79d9d4c4c")
+     (240 . "#489d9ef365ba")
+     (260 . "#3963a04a7f29")
      (280 . "#2aa198")
-     (300 . "#2898af")
-     (320 . "#2793ba")
-     (340 . "#268fc6")
+     (300 . "#288e98cbafe2")
+     (320 . "#27c19460bb87")
+     (340 . "#26f38ff5c72c")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
@@ -368,12 +432,6 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 (global-set-key (kbd "C-x g") 'magit-status)
-
-;; For jekyll
-(require 'org)
-(require 'org2jekyll)
-(add-hook 'org-mode-hook 'turn-on-flyspell)
-
 
 ;; Customised keybindings
 ;; Mac OS style font control

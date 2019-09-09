@@ -1,3 +1,6 @@
+;;; init.el --- Initialization file for Emacs
+;;; Commentary: Emacs Startup File --- initialization for Emacs
+
 ;;; Commentary:
 ;; Robert Postill's Emacs config
 ;;
@@ -5,6 +8,8 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+;;; Code:
+
 (package-initialize)
 
 (setq inhibit-startup-screen +1)
@@ -382,9 +387,10 @@
    (expand-file-name "~/software/robertpostill.github.io/org/") nil (org2jekyll))
  '(package-selected-packages
    (quote
-    (flycheck-golangci-lint go-gopath go-mode go-snippets js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
+    (org-pivotal pivotal-tracker go-guru go-projectile go-rename golint yasnippet-snippets flycheck-golangci-lint go-gopath go-mode go-snippets js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
+ '(pug-tab-width 2)
  '(show-paren-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(term-default-bg-color "#002b36")
@@ -446,3 +452,10 @@
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
 (require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+
+;; Go Support
+(add-hook 'before-save-hook #'gofmt-before-save)
+
+(provide 'init)
+
+;;; init.el ends here

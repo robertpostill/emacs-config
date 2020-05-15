@@ -312,24 +312,22 @@
  '(fci-rule-color "#073642")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#002b36" 0.25)
-    (quote
-     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+   (quote
+    ("#3b6b40f432d6" "#07b9463c4d36" "#47a3341e358a" "#1d873c3f56d5" "#2d86441c3361" "#43b7362d3199" "#061d417f59d7")))
  '(highlight-symbol-foreground-color "#93a1a1")
  '(highlight-tail-colors
    (quote
     (("#073642" . 0)
-     ("#546E00" . 20)
-     ("#00736F" . 30)
-     ("#00629D" . 50)
-     ("#7B6000" . 60)
-     ("#8B2C02" . 70)
-     ("#93115C" . 85)
+     ("#5b7300" . 20)
+     ("#007d76" . 30)
+     ("#0061a8" . 50)
+     ("#866300" . 60)
+     ("#992700" . 70)
+     ("#a00559" . 85)
      ("#073642" . 100))))
  '(hl-bg-colors
    (quote
-    ("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
+    ("#866300" "#992700" "#a7020a" "#a00559" "#243e9b" "#0061a8" "#007d76" "#5b7300")))
  '(hl-fg-colors
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
@@ -339,7 +337,7 @@
  '(menu-bar-mode nil)
  '(nrepl-message-colors
    (quote
-    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+    ("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4")))
  '(org-publish-project-alist
    (\`
     (("default" :base-directory
@@ -387,7 +385,7 @@
    (expand-file-name "~/software/robertpostill.github.io/org/") nil (org2jekyll))
  '(package-selected-packages
    (quote
-    (org-pivotal pivotal-tracker go-guru go-projectile go-rename golint yasnippet-snippets flycheck-golangci-lint go-gopath go-mode go-snippets js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
+    (csv-mode csv blacken typescript-mode typing org-pivotal pivotal-tracker go-guru go-projectile go-rename golint yasnippet-snippets flycheck-golangci-lint go-gopath go-mode go-snippets js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(pug-tab-width 2)
@@ -401,27 +399,27 @@
  '(vc-annotate-color-map
    (quote
     ((20 . "#dc322f")
-     (40 . "#c9485ddd1797")
-     (60 . "#bf7e73b30bcb")
+     (40 . "#cb4366eb20b4")
+     (60 . "#c1167942154f")
      (80 . "#b58900")
-     (100 . "#a5a58ee30000")
-     (120 . "#9d9d91910000")
-     (140 . "#9595943e0000")
-     (160 . "#8d8d96eb0000")
+     (100 . "#a6ae8f7c0000")
+     (120 . "#9ed892380000")
+     (140 . "#96be94cf0000")
+     (160 . "#8e5397440000")
      (180 . "#859900")
-     (200 . "#67119c4632dd")
-     (220 . "#57d79d9d4c4c")
-     (240 . "#489d9ef365ba")
-     (260 . "#3963a04a7f29")
+     (200 . "#77679bfc4635")
+     (220 . "#6d449d465bfd")
+     (240 . "#5fc09ea47092")
+     (260 . "#4c68a01784aa")
      (280 . "#2aa198")
-     (300 . "#288e98cbafe2")
-     (320 . "#27c19460bb87")
-     (340 . "#26f38ff5c72c")
+     (300 . "#303498e7affc")
+     (320 . "#2fa1947cbb9b")
+     (340 . "#2c879008c736")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
    (quote
-    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
+    (unspecified "#002b36" "#073642" "#a7020a" "#dc322f" "#5b7300" "#859900" "#866300" "#b58900" "#0061a8" "#268bd2" "#a00559" "#d33682" "#007d76" "#2aa198" "#839496" "#657b83")))
  '(xterm-color-names
    ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
  '(xterm-color-names-bright

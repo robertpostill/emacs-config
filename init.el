@@ -150,17 +150,17 @@
       js-doc-license "Proprietary")
 
 (add-hook 'js2-mode-hook
-           #'(lambda ()
-               (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
-               (define-key js2-mode-map "@" 'js-doc-insert-tag)))
+	  #'(lambda ()
+	      (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
+	      (define-key js2-mode-map "@" 'js-doc-insert-tag)))
 
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-    '(javascript-jshint)))
+	      (append flycheck-disabled-checkers
+		      '(javascript-jshint)))
 
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
@@ -221,9 +221,9 @@
     (if (> tab-count space-count) (setq indent-tabs-mode t))))
 
 (add-hook 'python-mode-hook
-    (lambda ()
-      (setq indent-tabs-mode nil)
-      (infer-indentation-style)))
+	  (lambda ()
+	    (setq indent-tabs-mode nil)
+	    (infer-indentation-style)))
 
 ;;OCaml
 
@@ -269,11 +269,11 @@
   (kbd "C-c <up>") 'merlin-type-enclosing-go-up)
 (define-key merlin-mode-map
   (kbd "C-c <down>") 'merlin-type-enclosing-go-down)
-; (set-face-background 'merlin-type-face "#88FF44")
+					; (set-face-background 'merlin-type-face "#88FF44")
 
 ;; ocp-indent
 (setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
-;(load-file (concat opam-share "/typerex/ocp-indent/ocp-indent.el"))
+					;(load-file (concat opam-share "/typerex/ocp-indent/ocp-indent.el"))
 
 ;; get some help with keybindings
 (which-key-mode)
@@ -338,6 +338,13 @@
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4")))
+ '(org2jekyll-blog-author "robertpostill")
+ '(org2jekyll-jekyll-directory (expand-file-name "~/software/robertpostill.github.io/"))
+ '(org2jekyll-jekyll-drafts-dir "")
+ '(org2jekyll-jekyll-posts-dir "_posts/")
+ '(org2jekyll-source-directory
+   (expand-file-name "~/software/robertpostill.github.io/org/"))
+
  '(org-publish-project-alist
    (\`
     (("default" :base-directory
@@ -377,53 +384,52 @@
       :publishing-function org-publish-attachment :recursive t)
      ("web" :components
       ("images" "js" "css")))))
- '(org2jekyll-blog-author "robertpostill" nil (org2jekyll))
- '(org2jekyll-jekyll-directory (expand-file-name "~/software/robertpostill.github.io/") nil (org2jekyll))
- '(org2jekyll-jekyll-drafts-dir "" nil (org2jekyll))
- '(org2jekyll-jekyll-posts-dir "_posts/" nil (org2jekyll))
- '(org2jekyll-source-directory
-   (expand-file-name "~/software/robertpostill.github.io/org/") nil (org2jekyll))
  '(package-selected-packages
    (quote
-    (csv-mode csv blacken typescript-mode typing org-pivotal pivotal-tracker go-guru go-projectile go-rename golint yasnippet-snippets flycheck-golangci-lint go-gopath go-mode go-snippets js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
- '(pos-tip-background-color "#073642")
- '(pos-tip-foreground-color "#93a1a1")
- '(pug-tab-width 2)
- '(show-paren-mode t)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
- '(term-default-bg-color "#002b36")
- '(term-default-fg-color "#839496")
- '(tool-bar-mode nil)
- '(utop-command "opam config exec \"utop -emacs\"")
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#dc322f")
-     (40 . "#cb4366eb20b4")
-     (60 . "#c1167942154f")
-     (80 . "#b58900")
-     (100 . "#a6ae8f7c0000")
-     (120 . "#9ed892380000")
-     (140 . "#96be94cf0000")
-     (160 . "#8e5397440000")
-     (180 . "#859900")
-     (200 . "#77679bfc4635")
-     (220 . "#6d449d465bfd")
-     (240 . "#5fc09ea47092")
-     (260 . "#4c68a01784aa")
-     (280 . "#2aa198")
-     (300 . "#303498e7affc")
-     (320 . "#2fa1947cbb9b")
-     (340 . "#2c879008c736")
-     (360 . "#268bd2"))))
- '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   (quote
-    (unspecified "#002b36" "#073642" "#a7020a" "#dc322f" "#5b7300" "#859900" "#866300" "#b58900" "#0061a8" "#268bd2" "#a00559" "#d33682" "#007d76" "#2aa198" "#839496" "#657b83")))
- '(xterm-color-names
-   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
- '(xterm-color-names-bright
-   ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
+    (htmlize yasnippet-snippets yard-mode wrap-region which-key web-mode vlf vagrant-tramp vagrant utop typing typescript-mode tuareg toml-mode toml terraform-mode systemd solarized-theme smex scss-mode scribble-mode sass-mode rvm rust-mode ruby-tools ruby-refactor ruby-hash-syntax ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rjsx-mode reason-mode rainbow-delimiters racket-mode python-test pytest py-autopep8 pug-mode projectile-rails prettier-js popwin polymode pivotal-tracker paredit-menu paradox pallet ox-gfm org2jekyll org-pivotal nvm mqtt-mode midje-mode magithub magit-gitflow magit-gh-pulls lispy keychain-environment js2-highlight-vars js-doc ivy-yasnippet ivy-hydra indium ido-ubiquitous highlight-parentheses graphviz-dot-mode golint go-snippets go-projectile go-gopath gitignore-mode gitconfig-mode geiser flycheck-rust flycheck-ocaml flycheck-golangci-lint flycheck-cask feature-mode expand-region exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view erlang ensime emacsql-psql elpy elm-yasnippets elm-mode ecb drag-stuff dotenv-mode dockerfile-mode docker-compose-mode docker dash-at-point cucumber-goto-step csv-mode csv crontab-mode coverage counsel-tramp common-lisp-snippets coffee-mode clojure-snippets clj-refactor cider-decompile chef-mode buttercup bundler blacken ansible ag ac-slime ac-js2 ac-etags ac-cider 4clojure))))
+
+'(package-selected-packages
+  (quote
+   (csv-mode csv blacken typescript-mode typing org-pivotal pivotal-tracker go-guru go-projectile go-rename golint yasnippet-snippets flycheck-golangci-lint go-gopath go-mode go-snippets js-doc py-autopep8 python-test elpy indium crontab-mode systemd pytest pug-mode prettier-js magit-gitflow dotenv-mode js2-highlight-vars js2-mode rjsx-mode nvm reason-mode counsel-tramp docker-compose-mode docker-tramp erlang lispy mqtt-mode ivy-hydra ivy-yasnippet docker dockerfile-mode toml toml-mode flycheck-rust rust-mode which-key keychain-environment polymode vagrant vagrant-tramp vlf terraform-mode geiser racket-mode scribble-mode magit magithub yard-mode yaml-mode wrap-region web-mode utop tuareg solarized-theme smex scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax ruby-guard ruby-factory ruby-end ruby-electric ruby-compilation rubocop rspec-mode rainbow-delimiters projectile-rails popwin paredit-menu paradox pallet ox-gfm org2jekyll midje-mode markdown-mode magit-gh-pulls json-mode js2-refactor ido-ubiquitous highlight-parentheses graphviz-dot-mode gitignore-mode gitconfig-mode flycheck-ocaml flycheck-cask feature-mode expand-region exercism exec-path-from-shell ess-smart-underscore ess-R-object-popup ess-R-data-view ensime emacsql-psql elm-yasnippets elm-mode ecb drag-stuff dash-at-point cucumber-goto-step coverage counsel common-lisp-snippets coffee-mode clojurescript-mode clojure-snippets clojure-env cljdoc clj-refactor cider-spy cider-profile cider-decompile chef-mode buttercup bundler bookmark+ ansible ag ack-and-a-half ace-window ac-slime ac-nrepl ac-js2 ac-etags ac-cider ac-R 4clojure)))
+'(pos-tip-background-color "#073642")
+'(pos-tip-foreground-color "#93a1a1")
+'(pug-tab-width 2)
+'(show-paren-mode t)
+'(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+'(term-default-bg-color "#002b36")
+'(term-default-fg-color "#839496")
+'(tool-bar-mode nil)
+'(utop-command "opam config exec \"utop -emacs\"")
+'(vc-annotate-background nil)
+'(vc-annotate-color-map
+  (quote
+   ((20 . "#dc322f")
+    (40 . "#cb4366eb20b4")
+    (60 . "#c1167942154f")
+    (80 . "#b58900")
+    (100 . "#a6ae8f7c0000")
+    (120 . "#9ed892380000")
+    (140 . "#96be94cf0000")
+    (160 . "#8e5397440000")
+    (180 . "#859900")
+    (200 . "#77679bfc4635")
+    (220 . "#6d449d465bfd")
+    (240 . "#5fc09ea47092")
+    (260 . "#4c68a01784aa")
+    (280 . "#2aa198")
+    (300 . "#303498e7affc")
+    (320 . "#2fa1947cbb9b")
+    (340 . "#2c879008c736")
+    (360 . "#268bd2"))))
+'(vc-annotate-very-old-color nil)
+'(weechat-color-list
+  (quote
+   (unspecified "#002b36" "#073642" "#a7020a" "#dc322f" "#5b7300" "#859900" "#866300" "#b58900" "#0061a8" "#268bd2" "#a00559" "#d33682" "#007d76" "#2aa198" "#839496" "#657b83")))
+'(xterm-color-names
+  ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
+'(xterm-color-names-bright
+  ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"])
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

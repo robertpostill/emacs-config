@@ -47,4 +47,12 @@
 	     :config
 	     (load-theme 'solarized-dark t))
 
+;; Yasnippet snippets
+(use-package yasnippet
+  :straight t
+  :config
+  (yas-global-mode 1))
+(use-package yasnippet-snippets
+  :straight t
+  :after (yasnippet))
 

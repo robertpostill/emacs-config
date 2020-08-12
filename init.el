@@ -21,3 +21,6 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
+
+;; use-package
+(straight-use-package 'use-package)

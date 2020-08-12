@@ -56,3 +56,8 @@
   :straight t
   :after (yasnippet))
 
+;; Midnight mode for clearing old buffers
+(use-package midnight
+  :straight t
+  :config
+  (midnight-delay-set 'midnight-delay 0))

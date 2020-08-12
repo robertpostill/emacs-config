@@ -5,8 +5,17 @@
 ;; Robert Postill's Emacs config
 ;;
 
-(setq inhibit-startup-screen +1) 
-(global-visual-line-mode 1) ; word wraping
+;; things that don't require packages
+(setq inhibit-startup-screen +1) ;straight to a buffer
+(global-visual-line-mode 1) ; word wrapping
+(show-paren-mode 1) ; highlight parentheses
+(winner-mode 1) ; working with windows
+(desktop-save-mode 1) ; so I can have a stack of buffers open at any one time
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(global-set-key (kbd "s-+") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
+(set-face-attribute 'default nil :font "Menlo-14" )
 
 ;; setup straight.el
 (defvar bootstrap-version)

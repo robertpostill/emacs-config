@@ -81,3 +81,9 @@
 	     :straight t
 	     :config
 	     (which-key-mode))
+
+;; make ssh-agent a thing
+(use-package keychain-environment
+	     :straight t
+	     :config
+	     (keychain-refresh-environment)) 

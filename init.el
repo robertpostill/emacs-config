@@ -25,6 +25,12 @@
 ;; use-package
 (straight-use-package 'use-package)
 
+;; load the shell context on *nixes
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
+  :straight t
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; solarized dark theme
 (use-package solarized-theme

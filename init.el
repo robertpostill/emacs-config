@@ -65,16 +65,16 @@
 ;; window movement made nice
 (use-package ace-window
   :straight t
-  :config 
-  (global-set-key (kbd "M-o") 'ace-window))
+  :bind
+  ("M-o" . 'ace-window))
 
 ;; the best way to git
 (use-package magit
 	     :straight t
 	     :init
 	     (setq magit-last-seen-setup-instructions "1.4.0")
-	     :config
-	     (global-set-key (kbd "C-x g") 'magit-status))
+	     :bind
+	     ("C-x g" . 'magit-status))
 
 ;; get some help with keybindings
 (use-package which-key

@@ -61,3 +61,9 @@
   :straight t
   :config
   (midnight-delay-set 'midnight-delay 0))
+
+;; window movement made nice
+(use-package ace-window
+  :straight t
+  :config 
+  (global-set-key (kbd "M-o") 'ace-window))

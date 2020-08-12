@@ -67,3 +67,11 @@
   :straight t
   :config 
   (global-set-key (kbd "M-o") 'ace-window))
+
+;; the best way to git
+(use-package magit
+	     :straight t
+	     :init
+	     (setq magit-last-seen-setup-instructions "1.4.0")
+	     :config
+	     (global-set-key (kbd "C-x g") 'magit-status))

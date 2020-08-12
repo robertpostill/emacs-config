@@ -75,3 +75,9 @@
 	     (setq magit-last-seen-setup-instructions "1.4.0")
 	     :config
 	     (global-set-key (kbd "C-x g") 'magit-status))
+
+;; get some help with keybindings
+(use-package which-key
+	     :straight t
+	     :config
+	     (which-key-mode))

@@ -83,6 +83,8 @@
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 ;; Gimme most of slime's extras
 (setq slime-contribs '(slime-fancy))
+;; Tell Geiser we're racket folk
+(setq geiser-active-implementations '(racket))
 
 (defun my/->string (str)
   (cond
@@ -292,7 +294,7 @@
 (require 'org)
 (require 'org2jekyll)
 (add-hook 'org-mode-hook 'turn-on-flyspell)
-
+(add-hook 'org-mode-hook #'org2jekyll-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

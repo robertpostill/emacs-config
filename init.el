@@ -4,3 +4,6 @@
 ;;; Commentary:
 ;; Robert Postill's Emacs config
 ;;
+
+(setq inhibit-startup-screen +1) 
+(global-visual-line-mode 1) ; word wraping

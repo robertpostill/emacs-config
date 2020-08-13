@@ -102,6 +102,8 @@
   :config
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq magit-completing-read-function 'ivy-completing-read)
   :bind
   (("\C-s" . 'swiper)
    ("C-c C-r" . 'ivy-resume)

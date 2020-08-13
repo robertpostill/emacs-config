@@ -158,3 +158,8 @@
 ;; terraform developemnt
 (use-package terraform-mode
   :straight t)
+
+;; docker
+(use-package dockerfile-mode
+  :straight t
+  :mode "Dockerfile[a-zA-Z.-]*\\'")

@@ -50,7 +50,11 @@
 ;; Yasnippet snippets
 (use-package yasnippet
   :straight t
+  :bind (:map yas-keymap
+              ("C-i" . yas-next-field-or-maybe-expand))
+  :mode ("/\\.emacs\\.d/snippets/" . snippet-mode)
   :config
+  (yas-load-directory (emacs-path "snippets"))
   (yas-global-mode 1))
 (use-package yasnippet-snippets
   :straight t

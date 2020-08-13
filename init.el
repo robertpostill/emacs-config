@@ -145,6 +145,16 @@
   :init
   (bind-key "C-r" #'counsel-minibuffer-history minibuffer-local-map))
 
+
+;; For jekyll
+(use-package org
+  :straight t)
+(use-package org2jekyll
+  :straight t
+  :hook
+  (('org-mode-hook . 'turn-on-flyspell)
+   ('org-mode-hook . #'org2jekyll-mode)))
+
 ;; terraform developemnt
 (use-package terraform-mode
   :straight t)

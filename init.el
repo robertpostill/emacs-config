@@ -75,6 +75,9 @@
 	     (setq magit-last-seen-setup-instructions "1.4.0")
 	     :bind
 	     ("C-x g" . 'magit-status))
+(use-package forge
+  :straight t
+  :after magit)
 
 ;; get some help with keybindings
 (use-package which-key
@@ -86,4 +89,8 @@
 (use-package keychain-environment
 	     :straight t
 	     :config
-	     (keychain-refresh-environment)) 
+	     (keychain-refresh-environment))
+
+;; terraform developemnt
+(use-package terraform-mode
+  :straight t)

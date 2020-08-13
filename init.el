@@ -169,3 +169,7 @@
 (use-package dockerfile-mode
   :straight t
   :mode "Dockerfile[a-zA-Z.-]*\\'")
+
+(use-package yaml-mode
+  :straight t
+  :mode "\\.ya?ml\\'")

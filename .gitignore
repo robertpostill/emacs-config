@@ -26,3 +26,4 @@ auto-save-list
 tramp
 .\#*
 straight
+forge-database.sqlite

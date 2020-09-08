@@ -157,19 +157,97 @@
   :straight t)
 (use-package org2jekyll
   :straight t
+  :after org
   :hook
   (('org-mode-hook . 'turn-on-flyspell)
-   ('org-mode-hook . #'org2jekyll-mode)))
+   ('org-mode-hook . #'org2jekyll-mode))
+  :custom
+  (org2jekyll-blog-author "robertpostill")
+  (org2jekyll-source-directory (expand-file-name "~/software/robertpostill.github.io/org/"))
+  (org2jekyll-jekyll-directory (expand-file-name "~/software/robertpostill.github.io/"))
+  (org2jekyll-jekyll-drafts-dir "")
+  (org2jekyll-jekyll-posts-dir "_posts/")
+  (org-publish-project-alist
+   `(("default"
+      :base-directory ,(org2jekyll-input-directory)
+      :base-extension "org"
+      :publishing-directory ,(org2jekyll-output-directory)
+      :publishing-function org-html-publish-to-html
+      :headline-levels 4
+      :section-numbers nil
+      :with-toc nil
+      :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
+      :html-preamble t
+      :recursive t
+      :make-index t
+      :html-extension "html"
+      :body-only t)
+     ("post"
+      :base-directory ,(org2jekyll-input-directory)
+      :base-extension "org"
+      :publishing-directory ,(org2jekyll-output-directory org2jekyll-jekyll-posts-dir)
+      :publishing-function org-html-publish-to-html
+      :headline-levels 4
+      :section-numbers nil
+      :with-toc nil
+      :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
+      :html-preamble t
+      :recursive t
+      :make-index t
+      :html-extension "html"
+      :body-only t)
+     ("images"
+      :base-directory ,(org2jekyll-input-directory "img")
+      :base-extension "jpg\\|gif\\|png"
+      :publishing-directory ,(org2jekyll-output-directory "img")
+      :publishing-function org-publish-attachment
+      :recursive t)
+     ("js"
+      :base-directory ,(org2jekyll-input-directory "js")
+      :base-extension "js"
+      :publishing-directory ,(org2jekyll-output-directory "js")
+      :publishing-function org-publish-attachment
+      :recursive t)
+     ("css"
+      :base-directory ,(org2jekyll-input-directory "css")
+      :base-extension "css\\|el"
+      :publishing-directory ,(org2jekyll-output-directory "css")
+      :publishing-function org-publish-attachment
+      :recursive t)
+     ("web" :components ("images" "js" "css")))))
 
 ;; terraform developemnt
 (use-package terraform-mode
-  :straight t)
+  :straight t
+  :hook (terraform-mode . terraform-format-on-save-mode))
 
 ;; docker
 (use-package dockerfile-mode
   :straight t
   :mode "Dockerfile[a-zA-Z.-]*\\'")
 
+;; YAML becuase yuck
 (use-package yaml-mode
   :straight t
   :mode "\\.ya?ml\\'")
+
+;; Typescript
+(use-package typescript-mode
+  :straight t
+  :mode "\\.ts\\'"
+  :config (setq-default typescript-indent-level 2))
+
+(use-package flycheck
+  :straight t
+  :init (global-flycheck-mode))
+
+(use-package company-mode
+  :straight t
+  :init (global-company-mode))
+
+(use-package tide
+  :straight t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))

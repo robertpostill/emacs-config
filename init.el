@@ -250,7 +250,7 @@
   :straight t
   :init (global-flycheck-mode))
 
-(use-package company-mode
+(use-package company
   :straight t
   :init (global-company-mode))
 
@@ -260,3 +260,4 @@
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save)))
+

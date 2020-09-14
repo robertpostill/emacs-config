@@ -18,6 +18,7 @@
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (set-face-attribute 'default nil :font "Menlo-14" )
 (put 'downcase-region 'disabled nil) ; yes I really would like to downcase things
+(put 'upcase-region 'disabled nil) ; yes I really want to upcase regions.
 
 ;; custom code used by packages
 ;;; I pinched this straight from https://github.com/jwiegley/dot-emacs/blob/master/init.el

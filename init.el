@@ -104,6 +104,9 @@
 	     :config
 	     (keychain-refresh-environment))
 
+(use-package ag
+  :straight t)
+
 ;; ivy and firends
 (use-package ivy
   :straight t

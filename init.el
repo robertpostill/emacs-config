@@ -261,3 +261,26 @@
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save)))
 
+;; Markdown
+(use-package markdown-mode
+  :straight t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
+;; Projectile
+(use-package projectile
+  :straight t
+  :config (projectile-mode +1)
+          (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+	  (setq projectile-project-search-path '("~/software/")))
+
+;; Racket
+(use-package racket-mode
+  :straight t
+  :hook (racket-mode . racket-xp-mode))
+
+(provide 'init)
+;;; init.el ends here

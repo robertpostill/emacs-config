@@ -17,3 +17,13 @@ transient
 smex-items
 yasnippet-snippets
 opam-user-setup.el
+magithub
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+straight
+forge-database.sqlite

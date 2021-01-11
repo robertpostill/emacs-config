@@ -249,6 +249,9 @@
   :mode "\\.ts\\'"
   :config (setq-default typescript-indent-level 2))
 
+(use-package prettier-js
+  :straight t)
+
 (use-package flycheck
   :straight t
   :init (global-flycheck-mode))
@@ -262,7 +265,7 @@
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+         (typescript-mode . prettier-js-mode)))
 
 ;; Markdown
 (use-package markdown-mode

@@ -270,6 +270,12 @@
          (typescript-mode . tide-hl-identifier-mode)
          (typescript-mode . prettier-js-mode)))
 
+;; ReasonML
+(use-package reason-mode
+  :straight t)
+(use-package merlin
+  :straight t)
+
 ;; Markdown
 (use-package markdown-mode
   :straight t

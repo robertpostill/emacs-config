@@ -27,3 +27,4 @@ tramp
 .\#*
 straight
 forge-database.sqlite
+racket-mode/*

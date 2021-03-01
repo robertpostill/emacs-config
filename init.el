@@ -5,6 +5,7 @@
 ;; Robert Postill's Emacs config
 ;;
 
+;;; Code:
 ;; things that don't require packages
 (setq-default default-directory "~") ; don't make me traipse all the way from / :)
 (setq inhibit-startup-screen +1) ; straight to a buffer

@@ -82,6 +82,14 @@
   :bind
   ("M-o" . 'ace-window))
 
+;; subtrees, visualised
+(use-package dired-subtree
+  :straight t
+  :config
+  (bind-keys :map dired-mode-map
+             ("i" . dired-subtree-insert)
+             (";" . dired-subtree-remove)))
+
 ;; the best way to git
 (use-package magit
 	     :straight t

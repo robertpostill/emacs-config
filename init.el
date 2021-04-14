@@ -277,7 +277,8 @@
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
-         (typescript-mode . prettier-js-mode)))
+         (typescript-mode . prettier-js-mode)
+	 (before-save . tide-format-before-save)))
 ;; Use web-mode for tsx files
 (use-package web-mode
   :straight t)

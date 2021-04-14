@@ -89,6 +89,10 @@
   (bind-keys :map dired-mode-map
              ("i" . dired-subtree-insert)
              (";" . dired-subtree-remove)))
+; better region selection
+(use-package expand-region
+  :straight t
+  :bind ("C-=" . er/expand-region))
 
 ;; the best way to git
 (use-package magit

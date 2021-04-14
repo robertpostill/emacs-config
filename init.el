@@ -316,6 +316,8 @@
 (use-package racket-mode
   :straight t
   :hook (racket-mode . racket-xp-mode))
+(use-package scribble-mode
+  :straight t)
 
 (provide 'init)
 ;;; init.el ends here

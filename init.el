@@ -254,6 +254,12 @@
   :straight t
   :mode "Dockerfile[a-zA-Z.-]*\\'")
 
+;; .env files
+(use-package dotenv-mode
+  :straight t
+  :mode "\\.env\\..*\\'")
+
+
 ;; YAML becuase yuck
 (use-package yaml-mode
   :straight t

@@ -309,7 +309,9 @@
   (company-mode +1))
 
 (use-package web-mode
-  :straight t)
+  :straight t
+  :init (setq web-mode-markup-indent-offset 2)
+  :init (setq web-mode-code-indent-offset 2))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()

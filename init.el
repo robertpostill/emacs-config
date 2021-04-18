@@ -265,6 +265,9 @@
   :straight t
   :mode "\\.ya?ml\\'")
 
+;; Javascript
+(setq js-indent-level 2)
+
 ;; Typescript
 (use-package typescript-mode
   :straight t
@@ -284,12 +287,27 @@
 
 (use-package tide
   :straight t
+  :init (setq-default typescript-indent-level 2)
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (typescript-mode . prettier-js-mode)
 	 (before-save . tide-format-before-save)))
+
+
 ;; Use web-mode for tsx files
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
 (use-package web-mode
   :straight t)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))

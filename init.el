@@ -118,6 +118,9 @@
 	     :config
 	     (keychain-refresh-environment))
 
+;; CSS indent
+(setq-default css-indent-offset 2)
+
 (use-package ag
   :straight t)
 

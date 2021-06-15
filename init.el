@@ -125,6 +125,9 @@
 (use-package ag
   :straight t)
 
+(use-package flx
+  :straight t)
+
 ;; ivy and firends
 (use-package ivy
   :straight t

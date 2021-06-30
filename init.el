@@ -47,6 +47,8 @@
 
 ;; use-package
 (straight-use-package 'use-package)
+(use-package el-patch
+  :straight t)
 
 ;; load the shell context on *nixes
 (use-package exec-path-from-shell

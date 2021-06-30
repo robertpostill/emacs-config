@@ -22,7 +22,9 @@
 (put 'upcase-region 'disabled nil) ; yes I really want to upcase regions.
 (setq-default indent-tabs-mode nil) ; don't use tabs unless your major mode demands it
 (fset 'yes-or-no-p 'y-or-n-p) ;; Use y/n instead of yes/no
-
+;; supress the error message when using dired
+(when (string= system-type "darwin")       
+  (setq dired-use-ls-dired nil))
 ;; custom code used by packages
 ;;; I pinched this straight from https://github.com/jwiegley/dot-emacs/blob/master/init.el
 (eval-and-compile

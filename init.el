@@ -290,6 +290,9 @@
 (use-package prettier-js
   :straight t)
 
+(use-package jsdoc
+  :straight (:host github :repo "isamert/jsdoc.el"))
+
 (use-package flycheck
   :straight t
   :init (global-flycheck-mode))

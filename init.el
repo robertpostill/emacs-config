@@ -1,7 +1,6 @@
 ;;; init.el --- Initialization file for Emacs
-;;; Commentary: Emacs Startup File --- initialization for Emacs
-
 ;;; Commentary:
+;; Emacs Startup File --- initialization for Emacs
 ;; Robert Postill's Emacs config
 ;;
 

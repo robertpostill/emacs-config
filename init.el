@@ -194,8 +194,8 @@
 
 
 ;; For jekyll
-(use-package org
-  :straight t)
+(use-package org)
+
 (use-package org2jekyll
   :straight t
   :after org

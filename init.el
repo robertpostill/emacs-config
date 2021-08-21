@@ -356,11 +356,15 @@
   :config (projectile-mode +1)
           (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 	  (setq projectile-project-search-path '("~/software/")))
+;; LISP editing
+(use-package lispy
+  :straight t)
 
 ;; Racket
 (use-package racket-mode
   :straight t
-  :hook (racket-mode . racket-xp-mode))
+  :hook ((racket-mode . racket-xp-mode)
+         (racket-mode . (lambda () (lispy-mode 1)))))
 (use-package scribble-mode
   :straight t)
 

@@ -357,8 +357,11 @@
           (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 	  (setq projectile-project-search-path '("~/software/")))
 ;; LISP editing
-(use-package lispy
+(use-package lispy-mnemonic
   :straight t)
+(use-package lispy
+  :straight t
+  :hook (lispy-mode . lispy-mnemonic-mode))
 
 ;; Racket
 (use-package racket-mode

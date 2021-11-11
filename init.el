@@ -1,6 +1,6 @@
-;;; init.el --- Initialization file for Emacs
+;;; init.el --- Initialisation file for Emacs
 ;;; Commentary:
-;; Emacs Startup File --- initialization for Emacs
+;; Emacs Startup File --- initialisation for Emacs
 ;; Robert Postill's Emacs config
 ;;
 
@@ -21,7 +21,7 @@
 (put 'upcase-region 'disabled nil) ; yes I really want to upcase regions.
 (setq-default indent-tabs-mode nil) ; don't use tabs unless your major mode demands it
 (fset 'yes-or-no-p 'y-or-n-p) ;; Use y/n instead of yes/no
-;; supress the error message when using dired
+;; suppress the error message when using dired
 (when (string= system-type "darwin")       
   (setq dired-use-ls-dired nil))
 ;; custom code used by packages
@@ -131,7 +131,7 @@
 (use-package flx
   :straight t)
 
-;; ivy and firends
+;; ivy and friends
 (use-package ivy
   :straight t
   :init

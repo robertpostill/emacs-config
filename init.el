@@ -191,18 +191,33 @@
   :init
   (bind-key "C-r" #'counsel-minibuffer-history minibuffer-local-map))
 
-
-;; For jekyll
 (use-package org
+  :init
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((dot . t)))
   :hook
   (('org-mode-hook . 'turn-on-flyspell)))
 
+(setq org-directory (concat (getenv "HOME") "/Dropbox/org-roam/"))
 (use-package org-roam
   :straight t
   :after org
   :init
-  (setq org-roam-directory "~/Documents/privay")
-  (setq org-roam-v2-ack t))
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory (file-truename org-directory))
+  :config
+  (org-roam-setup)
+  :bind (("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n r" . org-roam-node-random)		    
+         (:map org-mode-map
+               (("C-c n i" . org-roam-node-insert)
+                ("C-c n o" . org-id-get-create)
+                ("C-c n t" . org-roam-tag-add)
+                ("C-c n a" . org-roam-alias-add)
+                ("C-c n l" . org-roam-buffer-toggle)))))
 
 ;; terraform development
 (use-package terraform-mode

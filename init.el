@@ -192,6 +192,7 @@
   (bind-key "C-r" #'counsel-minibuffer-history minibuffer-local-map))
 
 (use-package org
+  :straight t
   :init
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -333,6 +334,15 @@
          (racket-mode . (lambda () (lispy-mode 1)))))
 (use-package scribble-mode
   :straight t)
+
+;; drawing with dot
+(use-package graphviz-dot-mode
+  :straight t
+  :config
+  (setq graphviz-dot-indent-width 4))
+
+(use-package company-graphviz-dot
+  )
 
 (provide 'init)
 ;;; init.el ends here

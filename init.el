@@ -13,7 +13,6 @@
 (winner-mode 1) ; working with windows
 (desktop-save-mode 1) ; so I can have a stack of buffers open at any one time
 (tool-bar-mode -1)
-(menu-bar-mode -1)
 (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (set-face-attribute 'default nil :font "Menlo-14" )
@@ -105,7 +104,9 @@
 	     :init
 	     (setq magit-last-seen-setup-instructions "1.4.0")
 	     :bind
-	     ("C-x g" . 'magit-status))
+	     ("C-x g" . 'magit-status)
+             :hook
+             (('git-commit-setup-hook . 'flyspell-mode)))
 (use-package forge
   :straight t
   :after magit)

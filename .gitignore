@@ -25,6 +25,10 @@ magithub
 auto-save-list
 tramp
 .\#*
-straight
+straight/repos
+straight/build
+straight/modified
+straight/build-cache.el
 forge-database.sqlite
 racket-mode/*
+org-roam.db

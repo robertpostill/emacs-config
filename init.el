@@ -84,7 +84,7 @@
 (use-package ace-window
   :straight t
   :bind
-  ("M-o" . 'ace-window))
+  ("C-\"" . 'ace-window))
 
 ;; subtrees, visualised
 (use-package dired-subtree
@@ -127,6 +127,9 @@
 (setq-default css-indent-offset 2)
 
 (use-package ag
+  :straight t)
+
+(use-package free-keys
   :straight t)
 
 (use-package flx
@@ -192,6 +195,10 @@
   :init
   (bind-key "C-r" #'counsel-minibuffer-history minibuffer-local-map))
 
+(use-package sqlite3
+  :straight t)
+
+;; Org usage
 (use-package org
   :straight t
   :init
@@ -201,6 +208,7 @@
   :hook
   (('org-mode-hook . 'turn-on-flyspell)))
 
+(setq org-roam-database-connector 'sqlite3)
 (setq org-directory (concat (getenv "HOME") "/Dropbox/org-roam/"))
 (use-package org-roam
   :straight t
@@ -220,6 +228,19 @@
                 ("C-c n t" . org-roam-tag-add)
                 ("C-c n a" . org-roam-alias-add)
                 ("C-c n l" . org-roam-buffer-toggle)))))
+(use-package org-roam-ui
+  :straight
+    (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
+    :after org-roam
+;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;         a hookable mode anymore, you're advised to pick something yourself
+;;         if you don't care about startup time, use
+    :hook (after-init . org-roam-ui-mode)
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
 
 ;; terraform development
 (use-package terraform-mode

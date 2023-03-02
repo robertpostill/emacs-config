@@ -366,5 +366,9 @@
 (use-package company-graphviz-dot
   )
 
+(use-package asdf
+  :straight (:host github :repo "tabfugnic/asdf.el")
+  :init (asdf-enable))
+
 (provide 'init)
 ;;; init.el ends here

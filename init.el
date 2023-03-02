@@ -263,6 +263,10 @@
   :straight t
   :mode "\\.ya?ml\\'")
 
+;; Ruby/Rails
+(use-package haml-mode
+  :straight t)
+
 ;; Javascript
 (setq js-indent-level 2)
 

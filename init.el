@@ -252,6 +252,9 @@
   :straight t
   :mode "Dockerfile[a-zA-Z.-]*\\'")
 
+(use-package docker-tramp
+  :straight t)
+
 ;; .env files
 (use-package dotenv-mode
   :straight t

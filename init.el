@@ -268,6 +268,9 @@
   :straight t
   :mode "Dockerfile[a-zA-Z.-]*\\'")
 
+(use-package docker-tramp
+  :straight t)
+
 ;; .env files
 (use-package dotenv-mode
   :straight t
@@ -278,6 +281,10 @@
 (use-package yaml-mode
   :straight t
   :mode "\\.ya?ml\\'")
+
+;; Ruby/Rails
+(use-package haml-mode
+  :straight t)
 
 ;; Javascript
 (setq js-indent-level 2)
@@ -398,6 +405,10 @@
 
 (use-package company-graphviz-dot
   )
+
+(use-package asdf
+  :straight (:host github :repo "tabfugnic/asdf.el")
+  :init (asdf-enable))
 
 (provide 'init)
 ;;; init.el ends here

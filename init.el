@@ -1,4 +1,4 @@
-;;; init.el --- Initialisation file for Emacs
+;;; init.el --- Initialisation file for Emacs  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;; Emacs Startup File --- initialisation for Emacs
 ;; Robert Postill's Emacs config
@@ -21,7 +21,7 @@
 (setq-default indent-tabs-mode nil) ; don't use tabs unless your major mode demands it
 (fset 'yes-or-no-p 'y-or-n-p) ;; Use y/n instead of yes/no
 ;; suppress the error message when using dired
-(when (string= system-type "darwin")       
+(when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
 ;; custom code used by packages
 ;;; I pinched this straight from https://github.com/jwiegley/dot-emacs/blob/master/init.el
@@ -106,7 +106,7 @@
 	     :bind
 	     ("C-x g" . 'magit-status)
              :hook
-             (('git-commit-setup-hook . 'flyspell-mode)))
+             (('git-commit-setup . 'git-commit-turn-on-flyspell)))
 (use-package forge
   :straight t
   :after magit)

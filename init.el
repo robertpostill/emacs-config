@@ -301,9 +301,10 @@
   :straight t
   ;:hook ((js-mode . 'prettier-js-mode))
   )
-
-(use-package jsdoc
-  :straight (:host github :repo "isamert/jsdoc.el"))
+;;(use-package tree-sitter-jsdoc
+;;  :straight (:host github :repo "tree-sitter/tree-sitter-jsdoc"))
+;;(use-package jsdoc
+;;  :straight (:host github :repo "isamert/jsdoc.el"))
 
 (use-package flycheck
   :straight t

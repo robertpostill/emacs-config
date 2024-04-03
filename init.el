@@ -401,12 +401,9 @@
   :config
   (setq graphviz-dot-indent-width 4))
 
-(use-package company-graphviz-dot
-  )
-
 (use-package asdf
   :straight (:host github :repo "tabfugnic/asdf.el")
-  :init (asdf-enable))
+  :config (asdf-enable))
 
 (provide 'init)
 ;;; init.el ends here

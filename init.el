@@ -380,6 +380,17 @@
   :config (projectile-mode +1)
           (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 	  (setq projectile-project-search-path '("~/software/")))
+;; org notes on projects
+(use-package org-project-capture
+  :bind (("C-c n p" . org-project-capture-project-todo-completing-read))
+  :straight (:host github :repo "colonelpanic8/org-project-capture")
+  :config
+  (progn
+    (setq org-project-capture-backend
+          (make-instance 'org-project-capture-projectile-backend))  ; Replace with your backend of choice
+    (setq org-project-capture-projects-file "~/org/projects.org")
+    (org-project-capture-single-file)))
+  
 ;; LISP editing
 (use-package lispy-mnemonic
   :straight t)

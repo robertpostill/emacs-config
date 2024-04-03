@@ -107,9 +107,9 @@
 	     ("C-x g" . 'magit-status)
              :hook
              (('git-commit-setup . 'git-commit-turn-on-flyspell)))
-(use-package forge
-  :straight t
-  :after magit)
+;; (use-package forge
+;;   :straight t
+;;   :after magit)
 
 ;; get some help with keybindings
 (use-package which-key

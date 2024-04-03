@@ -312,7 +312,8 @@
 
 (use-package company
   :straight t
-  :init (global-company-mode))
+  :init (global-company-mode)
+  :hook ((graphviz-dot-mode . company-mode)))
 
 (use-package tide
   :straight t
@@ -409,12 +410,25 @@
 ;; drawing with dot
 (use-package graphviz-dot-mode
   :straight t
+  :ensure t
   :config
   (setq graphviz-dot-indent-width 4))
 
 (use-package asdf
   :straight (:host github :repo "tabfugnic/asdf.el")
-  :config (asdf-enable))
+  :after (asdf-enable))
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ispell-program-name "aspell"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

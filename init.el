@@ -263,6 +263,12 @@
   :straight t
   :hook (terraform-mode . terraform-format-on-save-mode))
 
+;; nginx
+(use-package nginx-mmode
+  :straight
+  (:host github :repo "ajc/nginx-mode")
+  :commands nginx-mode)
+
 ;; docker
 (use-package dockerfile-mode
   :straight t

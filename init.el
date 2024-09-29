@@ -212,7 +212,11 @@
   :after tree-sitter)
 
 (use-package eglot
-  :straight t)
+  :straight t
+  :config
+  (add-to-list 'eglot-server-programs
+             '((rust-ts-mode rust-mode) .
+               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
 
 ;; Org usage
 (use-package org
@@ -418,6 +422,12 @@
   :straight (:host github :repo "tabfugnic/asdf.el")
   :after (asdf-enable))
 
+(use-package rust-mode
+  :straight t
+  :init
+  (setq rust-mode-treesitter-derive t)
+  :hook ((rust-mode . eglot-ensure)))
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
@@ -425,6 +435,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" default))
  '(ispell-program-name "aspell"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

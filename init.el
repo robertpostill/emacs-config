@@ -241,7 +241,7 @@
   (org-roam-setup)
   :bind (("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
-         ("C-c n r" . org-roam-node-random)		    
+         ("C-c n r" . org-roam-node-random)
          (:map org-mode-map
                (("C-c n i" . org-roam-node-insert)
                 ("C-c n o" . org-id-get-create)
@@ -267,6 +267,12 @@
   :straight t
   :hook (terraform-mode . terraform-format-on-save-mode))
 
+;; nginx
+(use-package nginx-mmode
+  :straight
+  (:host github :repo "ajc/nginx-mode")
+  :commands nginx-mode)
+
 ;; docker
 (use-package dockerfile-mode
   :straight t
@@ -276,7 +282,6 @@
 (use-package dotenv-mode
   :straight t
   :mode "\\.env\\..*\\'")
-
 
 ;; YAML becuase yuck
 (use-package yaml-mode
@@ -289,7 +294,7 @@
 
 ;; Javascript
 (setq js-indent-level 2)
-(use-package js-mode
+(use-package js-ts-mode
   :hook ((js-mode . 'js2-minor-mode)))
 (use-package js2-mode
   :straight t)

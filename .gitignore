@@ -32,3 +32,4 @@ straight/build-cache.el
 forge-database.sqlite
 racket-mode/*
 org-roam.db
+org-persist

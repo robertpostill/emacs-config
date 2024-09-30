@@ -403,7 +403,8 @@
   
 ;; LISP editing
 (use-package lispy-mnemonic
-  :straight t)
+  :straight t
+  :hook ((emacs-lisp-mode . lispy-mnemonic)))
 (use-package lispy
   :straight t
   :hook (lispy-mode . lispy-mnemonic-mode))

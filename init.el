@@ -434,6 +434,9 @@
   (setq rust-mode-treesitter-derive t)
   :hook ((rust-mode . eglot-ensure)))
 
+(use-package go-mode
+  :straight t)
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables

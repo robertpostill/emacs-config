@@ -34,3 +34,4 @@ racket-mode/*
 org-roam.db
 org-persist
 projects
+tree-sitter/*

@@ -291,7 +291,7 @@
 ;; Javascript
 (setq js-indent-level 2)
 (use-package js-ts-mode
-  :hook ((js-mode . 'js2-minor-mode)))
+  :mode "\\.js\\'")
 (use-package js2-mode
   :straight t)
 

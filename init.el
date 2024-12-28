@@ -143,7 +143,7 @@
   (setq ivy-re-builders-alist
         '((read-file-name-internal . ivy--regex-fuzzy)
           (counsel-find-file . ivy--regex-fuzzy)
-          (t . ivy--regex-plus)))
+          (t . ivy--regex-fuzzy)))
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
   (setq ivy-count-format "(%d/%d) ")
@@ -401,10 +401,12 @@
 ;; LISP editing
 (use-package lispy-mnemonic
   :straight t
-  :hook ((emacs-lisp-mode . lispy-mnemonic)))
+  ;:hook ((emacs-lisp-mode . lispy-mnemonic))
+  )
 (use-package lispy
   :straight t
-  :hook (lispy-mode . lispy-mnemonic-mode))
+  ;:hook (lispy-mode . lispy-mnemonic-mode)
+  )
 
 ;; Racket
 (use-package racket-mode

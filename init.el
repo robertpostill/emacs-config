@@ -440,7 +440,8 @@
   :hook ((rust-mode . eglot-ensure)))
 
 (use-package go-mode
-  :straight t)
+  :straight t
+  :hook ((go-mode . gofmt-before-save)))
 
 (provide 'init)
 ;;; init.el ends here

@@ -119,6 +119,9 @@
 ;;   :straight t
 ;;   :after magit)
 
+(use-package git-modes
+  :straight t)
+
 ;; get some help with keybindings
 (use-package which-key
 	     :straight t
@@ -407,14 +410,8 @@
     (org-project-capture-single-file)))
   
 ;; LISP editing
-(use-package lispy-mnemonic
-  :straight t
-  ;:hook ((emacs-lisp-mode . lispy-mnemonic))
-  )
 (use-package lispy
-  :straight t
-  ;:hook (lispy-mode . lispy-mnemonic-mode)
-  )
+  :straight t)
 
 ;; Racket
 (use-package racket-mode
@@ -444,6 +441,8 @@
 (use-package go-mode
   :straight t
   :hook ((go-mode . gofmt-before-save)))
+  :init
+  (setq tab-width 4))
 
 (provide 'init)
 ;;; init.el ends here

@@ -444,10 +444,5 @@
   :init
   (setq tab-width 4))
 
-(use-package markdown-mode
-  :straight t
-  :mode ("README\\.md\\'" . gfm-mode)
-  :init (setq markdown-command "multimarkdown"))
-
 (provide 'init)
 ;;; init.el ends here

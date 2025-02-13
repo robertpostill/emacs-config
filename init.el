@@ -83,7 +83,7 @@
   (midnight-delay-set 'midnight-delay 0))
 
 ;; window movement made nice
-......(use-package ace-window
+(use-package ace-window
   :straight t
   :bind
   ("C-\"" . 'ace-window))

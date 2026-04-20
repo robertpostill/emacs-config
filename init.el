@@ -364,6 +364,15 @@
     (setq org-project-capture-projects-file "~/org/projects.org")
     (org-project-capture-single-file)))
   
+;; drawing with dot
+(use-package graphviz-dot-mode
+  :straight t
+  :ensure t
+  :config
+  (setq graphviz-dot-indent-width 4))
+
+; LISPS
+
 ;; LISP editing
 (use-package lispy
   :straight t)
@@ -376,16 +385,16 @@
 (use-package scribble-mode
   :straight t)
 
-;; drawing with dot
-(use-package graphviz-dot-mode
-  :straight t
-  :ensure t
-  :config
-  (setq graphviz-dot-indent-width 4))
-
 (use-package asdf
   :straight (:host github :repo "tabfugnic/asdf.el")
   :after (asdf-enable))
+
+;; Clojure editing
+(use-package clojure-mode
+  :straight t)
+(use-package cider
+  :straight t)
+
 
 (use-package rust-mode
   :straight t

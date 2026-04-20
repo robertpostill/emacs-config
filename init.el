@@ -332,51 +332,6 @@
   :init (global-company-mode)
   :hook ((graphviz-dot-mode . company-mode)))
 
-(use-package tide
-  :straight t
-  :init (setq-default typescript-indent-level 2)
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (typescript-mode . prettier-js-mode)
-	 (before-save . tide-format-before-save)))
-
-
-;; Use web-mode for tsx files
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  ;; company is an optional dependency. You have to
-  ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
-  (company-mode +1))
-
-(use-package web-mode
-  :straight t
-  :init (setq web-mode-markup-indent-offset 2)
-  :init (setq web-mode-code-indent-offset 2))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
-;; enable typescript-tslint checker
-(flycheck-add-mode 'typescript-tslint 'web-mode)
-
-(use-package tsi
-  :after tree-sitter
-  :straight (tsi :type git :host github :repo "orzechowskid/tsi.el")
-  :commands (tsi-typescript-mode tsi-json-mode tsi-css-mode)
-  :init
-  (add-hook 'typescript-mode-hook (lambda () (tsi-typescript-mode 1)))
-  (add-hook 'json-mode-hook (lambda () (tsi-json-mode 1)))
-  (add-hook 'css-mode-hook (lambda () (tsi-css-mode 1)))
-  (add-hook 'scss-mode-hook (lambda () (tsi-scss-mode 1))))
-
 ;; ReasonML
 (use-package reason-mode
   :straight t)

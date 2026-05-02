@@ -372,16 +372,17 @@
   (setq graphviz-dot-indent-width 4))
 
 ; LISPS
-
 ;; LISP editing
-(use-package lispy
-  :straight t)
+(use-package smartparens
+  :straight t
+  :config
+  ;; load default config
+  (require 'smartparens-config))
 
 ;; Racket
 (use-package racket-mode
   :straight t
-  :hook ((racket-mode . racket-xp-mode)
-         (racket-mode . (lambda () (lispy-mode 1)))))
+  :hook ((racket-mode . racket-xp-mode)))
 (use-package scribble-mode
   :straight t)
 

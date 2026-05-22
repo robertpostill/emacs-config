@@ -270,6 +270,11 @@
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
 
+;; CSV mode
+(use-package csv-mode
+  :straight t
+  )
+
 ;; terraform development
 (use-package terraform-mode
   :straight t
@@ -426,7 +431,9 @@
   :straight t
   :ensure t
   :config
-  (setq graphviz-dot-indent-width 4))
+  (setq graphviz-dot-indent-width 4)
+  :hook
+  (graphviz-dot-mode . flycheck-mode))
 
 (use-package asdf
   :straight (:host github :repo "tabfugnic/asdf.el")

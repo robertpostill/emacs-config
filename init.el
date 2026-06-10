@@ -240,7 +240,7 @@
   (('org-mode-hook . 'turn-on-flyspell)))
 
 (setq org-roam-database-connector 'sqlite)
-(setq org-directory (concat (getenv "HOME") "/Dropbox/org-roam/"))
+(setq org-directory (concat (getenv "HOME") "/software/emacs/org-roam/"))
 (use-package org-roam
   :straight t
   :custom

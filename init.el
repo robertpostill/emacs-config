@@ -229,6 +229,9 @@
              '((rust-ts-mode rust-mode) .
                ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
 
+(use-package rainbow-delimiters
+  :straight t)
+
 ;; Org usage
 (use-package org
   :straight t
@@ -402,7 +405,10 @@
   :straight t)
 (use-package cider
   :straight t)
-
+(use-package clojure-ts-mode
+  :straight (:host github :repo "clojure-emacs/clojure-ts-mode")
+  :hook ((clojure-ts-mode . cider-mode)
+         (clojure-ts-mode . rainbow-delimiters-mode)))
 
 (use-package rust-mode
   :straight t

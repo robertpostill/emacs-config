@@ -35,3 +35,5 @@ org-roam.db
 org-persist
 projects
 tree-sitter/*
+eln-cache
+projectile-frecency.eld

@@ -359,8 +359,8 @@
 (use-package projectile
   :straight t
   :config (projectile-mode +1)
-          (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-	  (setq projectile-project-search-path '("~/software/")))
+          (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+	  (setq projectile-project-search-path '("~/software/" "~/projects/")))
 ;; org notes on projects
 (use-package org-project-capture
   :bind (("C-c n p" . org-project-capture-project-todo-completing-read))

@@ -435,12 +435,6 @@
   (setq rust-mode-treesitter-derive t)
   :hook ((rust-mode . eglot-ensure)))
 
-(use-package go-mode
-  :straight t
-  :hook ((go-mode . gofmt-before-save))
-  :init
-  (setq tab-width 4))
-
 ; All of this sets up claude code
 ;; install required inheritenv dependency:
 (use-package inheritenv

@@ -227,7 +227,9 @@
   :config
   (add-to-list 'eglot-server-programs
              '((rust-ts-mode rust-mode) .
-               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
+               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))
+             '(prog-mode . ("cds-lsp" "--stdio")))
+   (add-hook 'prog-mode-hook 'eglot-ensure))
 
 (use-package rainbow-delimiters
   :straight t)
